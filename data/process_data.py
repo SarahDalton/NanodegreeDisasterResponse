@@ -37,12 +37,15 @@ def clean_data(df):
     '''
     # split text data from 'categories' column into seperate columns
     categories =  df['categories'].str.split(';', expand=True)
+    # Replace related-2 values to related-1
+    categories = categories.replace(to_replace='related-2', value='related-1')
+    # Set column names as first row
     row = categories[0:1]
     category_colnames = row.apply(lambda x: x.str[:-2]).values.tolist()
-    
     categories.columns = category_colnames
-    for column in categories:
+
     # set each value to be the last character of the string
+    for column in categories:
         categories[column] = categories[column].str[-1]
     
     # convert column from string to numeric
