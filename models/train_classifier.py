@@ -22,7 +22,7 @@ import pickle
 import sqlite3
 
 def load_data(database_filepath):
-     """
+    """
     Load data from a SQLite database.
 
     Arguments:
@@ -94,7 +94,7 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
-     """
+    """
     Evaluate the model and print classification reports.
 
     Arguments:
@@ -109,10 +109,10 @@ def evaluate_model(model, X_test, Y_test, category_names):
     y_pred = model.predict(X_test)
     for i, col in enumerate(Y_test):
         print(col)
-        print(classification_report(Y_test[col], y_pred[:, i],                                                             target_names=category_names))
+        print(classification_report(Y_test[col], y_pred[:, i], target_names=category_names))
 
 def save_model(model, model_filepath):
-     """
+    """
     Save the trained model to a pickle file.
 
     Arguments:
