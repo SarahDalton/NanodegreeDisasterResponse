@@ -5,7 +5,7 @@ import sqlite3
 from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
-     """
+    """
     Loads datasets and merges them both
     
     Arguments:
@@ -24,7 +24,7 @@ def load_data(messages_filepath, categories_filepath):
 
 
 def clean_data(df):
-     '''
+    '''
     Cleans the input dataframe by splitting the text data
     in the "categories" column into separate columns, 
     then converts category values to binary values
@@ -56,7 +56,7 @@ def clean_data(df):
 
 
 def save_data(df, database_filename):
-     '''
+    '''
     Saves and exports the input dataframe into a sqlite database.
     
     Arguments:
